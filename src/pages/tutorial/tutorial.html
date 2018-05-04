@@ -1,0 +1,36 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="primary">Skip</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+
+    <ion-slide>
+      <img src="assets/img/icon.png" class="slide-image"/>
+      <h2 class="slide-title">
+        Welcome to <b>Arya Kshyatriya Yuva Samithi</b>
+      </h2>
+      <p>
+        Arya Kshatriya Yuva Samithi (AKYS) is an Association of ARYA KSHATIRYA YOUTH who formed together for Welfare and Development of ARYA KSHATRIYA COMMUNITY! It’s a state wide common platform for ARYA KSHATRIYA/ ARE / AREVALLU to share their ideas and do service for the development of the community and society
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <!-- <img src="assets/img/icon.png" class="slide-image"/> -->
+      <h2 class="slide-title" >Moto</h2> <br/>
+      <p>
+        To guide the youth regarding Education, Employment. <br/>
+        And to develop oneness among the community by conducting various events.
+      </p>
+      <button ion-button icon-end large clear (click)="startApp()">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

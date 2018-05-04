@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="post">Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="post">
+    <h1>{{post.title}}</h1>
+    <p>
+      {{post.tagline}} - {{post.summary}}
+    </p>
+    <p>{{post.details}}</p>
+  </div>
+</ion-content>

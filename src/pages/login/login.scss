@@ -1,0 +1,17 @@
+// Styles for all of the user pages:
+// Login, Signup, Support
+
+page-user {
+  .logo {
+     position:absolute;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    top:50%;
+    transform:translateY(-50%);
+  }
+
+  .list {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Account</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="appBackground">
+  <div padding-top text-center *ngIf="user">
+    <img src="{{user.photoURL}}" alt="avatar">
+    <h2>{{user.email}}</h2>
+    <h2>{{user.displayName}}</h2>
+    <h2>{{user.phoneNumber}}</h2>
+    <h2>{{user.gender}}</h2>
+  </div>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label stacked>Phone</ion-label>
+          <ion-input type="text" [(ngModel)]="profile.phoneNumber"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Status</ion-label>
+          <ion-select [(ngModel)]="profile.isSingle">
+             <ion-option value="0">Select</ion-option>
+             <ion-option value="-1">Single</ion-option>
+             <ion-option value="1">Married</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Occupation</ion-label>
+          <ion-input type="text" [(ngModel)]="profile.occupation"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>District</ion-label>
+          <ion-select [(ngModel)]="profile.district">
+            <ion-option *ngFor="let item of districts">{{item}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Mandal</ion-label>
+          <ion-input type="text" [(ngModel)]="profile.mandal"></ion-input>
+        </ion-item>
+
+        <!--
+        <ion-item>
+          <ion-label stacked>State</ion-label>
+          <ion-input type="text" [(ngModel)]="profile.state"></ion-input>
+        </ion-item>
+        -->
+        <button ion-button full color="success" (click)="updateProfile(profile)">Update</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>    
+</ion-content>
